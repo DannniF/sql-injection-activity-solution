@@ -70,16 +70,18 @@ app.post('/login', function (req, res) {
 
 	db.get(query, function (err, row) {
 		if (err) {
-			console.log('ERROR', err);
-			res.redirect("/index.html#error");
-			res.send('There\'s been an error')
+			// console.log('ERROR', err);
+			// res.redirect("/index.html#error");
+			// res.send('There\'s been an error')
+			console.log('yes')
 		} else if (!row) {
-			res.redirect("/index.html#unauthorized");
+			// res.redirect("/index.html#unauthorized");
+			console.log('second yes')
 		} else {
-			res.send(
+			// res.send(
 			"Hello <b>" + row.title + '!</b><br /> This file contains all your secret data: <br /><br /> SECRETS <br /><br /> MORE SECRETS <br /><br /> <a href="/index.html">Go back to login</a>'
-			)
-			//res.send('Login successful')
+			// )
+			res.send('Login successful')
 
 
 			// NOTES:
